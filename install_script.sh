@@ -1,0 +1,11 @@
+helm install rediscart ./charts/redis -f ./values/redis-values.yaml
+helm install emailservice ./charts/microservice -f ./values/email-service-values.yaml
+helm install adservice ./charts/microservice -f ./values/ad-service-values.yaml
+helm install cartservice ./charts/microservice -f ./values/cartservice-values.yaml
+helm install checkoutservice ./charts/microservice -f ./values/checkoutservice-values.yaml
+helm install currencyservice ./charts/microservice -f ./values/currency-service-values.yaml
+helm install frontendervice ./charts/microservice -f ./values/frontend-values.yaml
+helm install paymentservice ./charts/microservice -f ./values/payment-service-values.yaml
+helm install productcatalogservice ./charts/microservice -f ./values/productcatalog-service-values.yaml
+helm install recommendationservice ./charts/microservice -f ./values/recommendation-service-values.yaml
+helm install shippingservice ./charts/microservice -f ./values/shipping-service-values.yaml
