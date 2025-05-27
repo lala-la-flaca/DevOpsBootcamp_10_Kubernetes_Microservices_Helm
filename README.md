@@ -85,7 +85,7 @@ Deploy microservices using Helmfile
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/06%20vaidate%20that%20the%20yaml%20files%20are%20correct.png" width=500 />
    
-12. Validate the Helm chart structure and templates for common issues, required fields, and adherence to best practices. It helps catch errors before rendering or deployment.
+12. Validate the Helm chart for potential issues, such as missing required fields, syntax errors, and adherence to best practices. It helps catch errors before rendering or deployment.
     
     ```bash
     helm lint -f email-services-values.yaml ./microservice 
