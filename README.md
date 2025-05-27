@@ -28,7 +28,7 @@ Build a flexible, reusable **Helm chart** to deploy existing microservices.
 - Define common default values for microservices.
 - Define a custom values file for microservices.
 - Define a Helm chart for Redis.
-- Create  a Helm default values for Redis.
+- Create  Helm default values for Redis.
 - Define a custom values file for Redis.
 - Deploy microservices using a script.
 - Deploy microservices using Helmfile.
@@ -77,45 +77,45 @@ Deploy microservices using Helmfile
     
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/05%20overwrites%20default%20values.png" width=500 />
      
-15. Validate that all YAML files are correct.
+15. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
     
     ```bash
-    
+    helm template -f email-services-values.yaml ./microservice    
     ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/06%20vaidate%20that%20the%20yaml%20files%20are%20correct.png" width=500 />
    
-13. Validate the YAML file for issues.
+13. Validate the Helm chart structure and templates for common issues, required fields, and adherence to best practices. It helps catch errors before rendering or deployment.
     
     ```bash
-    
+    helm lint -f email-services-values.yaml ./microservice 
     ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/07%20using%20lint%20to%20check%20for%20issues.PNG" width=500 />
    
-14. Ensure that the Kubernetes namespace is empty before installing.
+14. Ensure that there aren't pods running. 
     
     ```bash
-    
+    kubectl get pod
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/08%20checking%20current%20pods.PNG" width=500 />
    
 15. Install a microservice via Helm CLI
     
     ```bash
-    
+    helm install -f email-services-values.yaml emailservice ./microservice 
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/09%20installing%20emailservice.PNG" width=500 />
    
 16. Verify that the pods are running.
     
     ```bash
-    
+    kubectl get pod
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/10%20two%20pods%20email%20service%20deployed.PNG" width=500 />
    
 17. Confirm that Helm installed the chart successfully.
 
     ```bash
-    
+    helm ls
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/13%20pods.png" width=500 />
    
@@ -151,17 +151,17 @@ Deploy microservices using Helmfile
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/18%20overwriting%20redis%20default%20value.png" width=500 />
    
-16. Validate that the YAML files are syntactically correct.
+16. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
 
     ```bash
-    
+    helm template -f ./values/redis-values.yaml ./charts/redis
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/19%20testing%20redis%20chart%20is%20ok.png" width=500 />
    
 18. Test the YAML files against the Kubernetes cluster using --dry-run to simulate the deployment without applying changes.
 
     ```bash
-    
+    helm install rediscart .charts/redis -f ./values/redis-values.yaml --dry-run
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/20%20testing%20files%20within%20the%20k8%20cluster.png" width=500 />
    
@@ -171,6 +171,14 @@ Deploy microservices using Helmfile
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/21%20executing%20script.PNG" width=500 />
   
+2. Provide rights to execute the script
+   ```bash
+   chmod u+x install_script.sh
+   ls - la
+   /.install_script.sh
+   ```
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/21%20executing%20script.PNG" width=500/>
+   
 3. Verify that all pods are running.
 
    ```bash
@@ -178,9 +186,18 @@ Deploy microservices using Helmfile
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/22%20all%20pods%20running.PNG" width=500 />
    
-5. Create a script that deletes all microservices in a single command.
+4. Create a script that deletes all microservices in a single command.
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/23%20uninstll%20script.png" width=500 />
+   
+5. Provide rights and execute the script
+
+    ```bash
+   chmod u+x uninstall.sh
+   ls - la
+   /.uninstall.sh
+   ```
+   
 
 ### Deploy Microservices Using Helmfile.
 1. Install Helmfile using Homebrew.
