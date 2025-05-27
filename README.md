@@ -23,7 +23,6 @@ These exercises are part of **Module 10: Kubernetes with Helm** in the **TWN Dev
 Build a flexible, reusable **Helm chart** to deploy existing microservices.
 
 ## 🎯 Features
-
 - Define a Helm chart for Microservices.
 - Define a common template for microservices.
 - Define common default values for microservices.
@@ -34,9 +33,11 @@ Build a flexible, reusable **Helm chart** to deploy existing microservices.
 - Deploy microservices using a script.
 - Deploy microservices using Helmfile.
 
-## 📦 Demo 6
+## 📦 Demo 7
 ## 📌 Objective
 Deploy microservices using Helmfile
+
+## 🎯 Features
 * Install Helmfile
 * Define HelmFile
 * Apply configuration.
