@@ -77,7 +77,7 @@ Deploy microservices using Helmfile
     
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/05%20overwrites%20default%20values.png" width=500 />
      
-11. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
+11. Renders the Kubernetes manifest files from the specified Helm chart using the provided values file, without installing anything to the cluster. Useful for inspecting and debugging the rendered manifests locally
     
     ```bash
     helm template -f email-services-values.yaml ./microservice    
@@ -153,7 +153,7 @@ Deploy microservices using Helmfile
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/18%20overwriting%20redis%20default%20value.png" width=500 />
    
-11. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
+11. Renders the Kubernetes manifest files from the specified Helm chart using the provided values file, without installing anything to the cluster. Useful for inspecting and debugging the rendered manifests locally
 
     ```bash
     helm template -f ./values/redis-values.yaml ./charts/redis
