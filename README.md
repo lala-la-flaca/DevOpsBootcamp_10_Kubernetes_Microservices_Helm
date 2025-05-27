@@ -130,26 +130,26 @@ Deploy microservices using Helmfile
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/14%20creating%20new%20chart%20for%20redis%20and%20creating%20deployment%20and%20service%20file.png" width=500 />
    
-3. Delete all default templates and values created with the chart.
-4. Create a new deployment.yaml file
-5. Copy the base deployment configuration from the previous exercise.
-6. Replace values with placeholders using camelCase variables wrapped in {{}}
+2. Delete all default templates and values created with the chart.
+3. Create a new deployment.yaml file
+4. Copy the base deployment configuration from the previous exercise.
+5. Replace values with placeholders using camelCase variables wrapped in {{}}
    
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/15%20parameterizing%20redis%20template%20with%20volumes.PNG" width=500 />
    
-8. Create a new service.yaml file.
-9. Copy the base service configuration from the previous exercise.
-10. Replace values with placeholders using camelCase variables wrapped in {{}}
-    
+6. Create a new service.yaml file.
+7. Copy the base service configuration from the previous exercise.
+8. Replace values with placeholders using camelCase variables wrapped in {{}}
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/16%20redis%20service%20template.PNG" width=500 />
    
-12. Create a values.yaml file that defines default values for all Redis variables.
-    
+9. Create a values.yaml file that defines default values for all Redis variables.
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/17%20redis%20default%20values.png" width=500 />
    
-14. Create a custom value file for Redis to override the default values.
-    
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/18%20overwriting%20redis%20default%20value.png" width=500 />
+10. Create a custom value file for Redis to override the default values.
+
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/18%20overwriting%20redis%20default%20value.png" width=500 />
    
 16. Validate that the YAML files are syntactically correct.
 
@@ -168,6 +168,7 @@ Deploy microservices using Helmfile
 
 ### Deploy Microservices Using a Script
 1. Create a script that deploys all microservices in a single command.
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/21%20executing%20script.PNG" width=500 />
   
 3. Verify that all pods are running.
