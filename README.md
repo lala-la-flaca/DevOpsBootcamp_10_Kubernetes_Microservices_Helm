@@ -55,65 +55,64 @@ Deploy microservices using Helmfile
    helm create microservice
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/01%20helm%20create%20micro.png" width=500 />
-3. Delete all default templates and values created with the chart.
-4. Create a new template for deployments under the templates directory.
-5. Copy the base deployment configuration from the previous exercise.
-6. Replace static values with placeholders using {{ .Values.variableName }} in camelCase format.
+2. Delete all default templates and values created with the chart.
+3. Create a new template for deployments under the templates directory.
+4. Copy the base deployment configuration from the previous exercise.
+5. Replace static values with placeholders using {{ .Values.variableName }} in camelCase format.
    
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/02%20deployment%20file%20template.png" width=500 />
     
-8. Create a new template for services.
+6. Create a new template for services.
     
-9. Copy the base service configuration from the previous exercise.
+7. Copy the base service configuration from the previous exercise.
 
-10. Replace static values with placeholders using {{ .Values.variableName }} in camelCase format.
+8. Replace static values with placeholders using {{ .Values.variableName }} in camelCase format.
     
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/03%20service%20file%20template.png" width=500 />
     
-12. Create a values.yaml file that defines default values for all microservice variables.
+9. Create a values.yaml file that defines default values for all microservice variables.
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/04%20default%20values%20file.png" width=500 />
      
-13. Create a custom value file for each microservice to override the default values.
+10. Create a custom value file for each microservice to override the default values.
     
      <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/05%20overwrites%20default%20values.png" width=500 />
      
-15. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
+11. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
     
     ```bash
     helm template -f email-services-values.yaml ./microservice    
     ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/06%20vaidate%20that%20the%20yaml%20files%20are%20correct.png" width=500 />
    
-13. Validate the Helm chart structure and templates for common issues, required fields, and adherence to best practices. It helps catch errors before rendering or deployment.
+12. Validate the Helm chart structure and templates for common issues, required fields, and adherence to best practices. It helps catch errors before rendering or deployment.
     
     ```bash
     helm lint -f email-services-values.yaml ./microservice 
     ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/07%20using%20lint%20to%20check%20for%20issues.PNG" width=500 />
    
-14. Ensure that there aren't pods running. 
+13. Ensure that there aren't pods running. 
     
     ```bash
     kubectl get pod
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/08%20checking%20current%20pods.PNG" width=500 />
    
-15. Install a microservice via Helm CLI
+14. Install a microservice via Helm CLI
     
     ```bash
     helm install -f email-services-values.yaml emailservice ./microservice 
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/09%20installing%20emailservice.PNG" width=500 />
    
-16. Verify that the pods are running.
+15. Verify that the pods are running.
     
     ```bash
     kubectl get pod
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/10%20two%20pods%20email%20service%20deployed.PNG" width=500 />
    
-17. Confirm that Helm installed the chart successfully.
-
+16.  List the releases deployed by Helm in Kubernetes.
     ```bash
     helm ls
     ```
@@ -151,14 +150,14 @@ Deploy microservices using Helmfile
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/18%20overwriting%20redis%20default%20value.png" width=500 />
    
-16. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
+11. Render the Kubernetes YAML manifests from the chart and values. It helps preview what will be applied to the cluster without  creating any resources. It’s useful for inspecting the output before deploying
 
     ```bash
     helm template -f ./values/redis-values.yaml ./charts/redis
     ```
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/19%20testing%20redis%20chart%20is%20ok.png" width=500 />
    
-18. Test the YAML files against the Kubernetes cluster using --dry-run to simulate the deployment without applying changes.
+12. Test the YAML files against the Kubernetes cluster using --dry-run to simulate the deployment without applying changes.
 
     ```bash
     helm install rediscart .charts/redis -f ./values/redis-values.yaml --dry-run
@@ -207,22 +206,22 @@ Deploy microservices using Helmfile
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/28%20install%20helm%20file%20available%20in%20brew.png" width=500 />
    
-3. Create a Helmfile.yaml and define the release name, chart location, and associated values.
+2. Create a Helmfile.yaml and define the release name, chart location, and associated values.
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/26%2026%20helmfile%20structure%20releases.PNG" width=500 />
    
-5. Specify configuration values directly in helmfile.yaml to override custom values files.
+3. Specify configuration values directly in helmfile.yaml to override custom values files.
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/27%20dfining%20the%20variables%20in%20the%20image%20section%20overwrites%20th%20values%20from%20the%20custom%20values%20file%20from%20the%20helmfile.png" width=500 />
    
-7. Deploy microservices.
+4. Deploy microservices.
    
    ```bash
    helmfile sync
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/29%20helfile%20sync.png" width=500 />
    
-9. List available charts
+5. List available charts
 
    ```bash
     helmfile list
@@ -230,7 +229,7 @@ Deploy microservices using Helmfile
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/30%20helmfile%20list.png" width=500/>
 
     
-11. Access the Online Boutique using the public IP address of the LoadBalancer.
+6. Access the Online Boutique using the public IP address of the LoadBalancer.
 
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/32%20microservices%20runing%20using%20a%20loadbalancer%20as%20single%20port.png" width=500 />
    
