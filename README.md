@@ -90,7 +90,8 @@ Deploy microservices using Helmfile
     ```bash
     helm lint -f email-services-values.yaml ./microservice 
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/07%20using%20lint%20to%20check%20for%20issues.PNG" width=500 />
+
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/07%20using%20lint%20to%20check%20for%20issues.PNG" width=500 />
    
 13. Ensure that there aren't pods running. 
     
