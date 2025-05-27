@@ -96,28 +96,28 @@ Deploy microservices using Helmfile
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/08%20checking%20current%20pods.PNG" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/08%20checking%20current%20pods.PNG" width=500 />
    
 15. Install a microservice via Helm CLI
     
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/09%20installing%20emailservice.PNG" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/09%20installing%20emailservice.PNG" width=500 />
    
 16. Verify that the pods are running.
     
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/10%20two%20pods%20email%20service%20deployed.PNG" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/10%20two%20pods%20email%20service%20deployed.PNG" width=500 />
    
 17. Confirm that Helm installed the chart successfully.
 
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/13%20pods.png" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/13%20pods.png" width=500 />
    
 
 
@@ -127,6 +127,7 @@ Deploy microservices using Helmfile
    ```bash
    helm create redis
    ```
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/14%20creating%20new%20chart%20for%20redis%20and%20creating%20deployment%20and%20service%20file.png" width=500 />
    
 3. Delete all default templates and values created with the chart.
@@ -155,14 +156,14 @@ Deploy microservices using Helmfile
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/19%20testing%20redis%20chart%20is%20ok.png" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/19%20testing%20redis%20chart%20is%20ok.png" width=500 />
    
 18. Test the YAML files against the Kubernetes cluster using --dry-run to simulate the deployment without applying changes.
 
     ```bash
     
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/20%20testing%20files%20within%20the%20k8%20cluster.png" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/20%20testing%20files%20within%20the%20k8%20cluster.png" width=500 />
    
 
 ### Deploy Microservices Using a Script
@@ -170,12 +171,14 @@ Deploy microservices using Helmfile
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/21%20executing%20script.PNG" width=500 />
   
 3. Verify that all pods are running.
+
    ```bash
    kubectl get pods
    ```
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/22%20all%20pods%20running.PNG" width=500 />
    
 5. Create a script that deletes all microservices in a single command.
+
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/23%20uninstll%20script.png" width=500 />
 
 ### Deploy Microservices Using Helmfile.
@@ -190,7 +193,7 @@ Deploy microservices using Helmfile
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/26%2026%20helmfile%20structure%20releases.PNG" width=500 />
    
-5. Specify configuration values directly in helmfile.yaml to overrides custom values files.
+5. Specify configuration values directly in helmfile.yaml to override custom values files.
 
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/27%20dfining%20the%20variables%20in%20the%20image%20section%20overwrites%20th%20values%20from%20the%20custom%20values%20file%20from%20the%20helmfile.png" width=500 />
    
@@ -202,14 +205,15 @@ Deploy microservices using Helmfile
    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/29%20helfile%20sync.png" width=500 />
    
 9. List available charts
-    ```bash
+
+   ```bash
     helmfile list
     ```
-    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/30%20helmfile%20list.png" width=500/>
+   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/30%20helmfile%20list.png" width=500/>
 
     
 11. Access the Online Boutique using the public IP address of the LoadBalancer.
 
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/32%20microservices%20runing%20using%20a%20loadbalancer%20as%20single%20port.png" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/32%20microservices%20runing%20using%20a%20loadbalancer%20as%20single%20port.png" width=500 />
    
    
