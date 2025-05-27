@@ -82,7 +82,8 @@ Deploy microservices using Helmfile
     ```bash
     helm template -f email-services-values.yaml ./microservice    
     ```
-   <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/06%20vaidate%20that%20the%20yaml%20files%20are%20correct.png" width=500 />
+
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/06%20vaidate%20that%20the%20yaml%20files%20are%20correct.png" width=500 />
    
 12. Validate the Helm chart structure and templates for common issues, required fields, and adherence to best practices. It helps catch errors before rendering or deployment.
     
@@ -96,6 +97,7 @@ Deploy microservices using Helmfile
     ```bash
     kubectl get pod
     ```
+
     <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/08%20checking%20current%20pods.PNG" width=500 />
    
 14. Install a microservice via Helm CLI
@@ -114,9 +116,9 @@ Deploy microservices using Helmfile
    
 16.  List the releases deployed by Helm in Kubernetes.
     ```bash
-    helm ls
+      helm ls
     ```
-    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/13%20pods.png" width=500 />
+    <img src="https://github.com/lala-la-flaca/DevOpsBootcamp_10_Kubernetes_Microservices_Helm/blob/main/Img/11%20helm%20ls%20checking%20service.PNG" width=500 />
    
 
 
